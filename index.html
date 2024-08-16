@@ -1,578 +1,790 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Umar Farook Portfolio/Resume</title>
-  <!-- Meta -->
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="UmarFarook Portfolio/Resume">
-  <meta name="author" content="Umar Farook">
-  <link rel="shortcut icon" href="favicon.ico">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Umar's Portfolio</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- FontAwesome JS -->
-  <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-  <!-- Global CSS -->
-  <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Theme CSS -->
-  <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
-<body>
-<!-- ******HEADER****** -->
-<header class="header">
-  <div class="container clearfix">
-    <img class="profile-image img-fluid float-left" src="assets/images/profile.png" alt="Umar Farook"/>
-    <div class="profile-content float-left">
-      <h1 class="name">Umar Farook</h1>
-      <h2 class="desc">Full Stack Developer</h2>
-      <ul class="social list-inline">
-        <li class="list-inline-item"><a href="https://www.linkedin.com/in/umarfarookm" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-        <li class="list-inline-item"><a href="https://github.com/umarfarookm" target="_blank"><i class="fab fa-github-alt"></i></a></li>
-        <li class="list-inline-item"><a href="https://www.npmjs.com/~umarfarook89" target="_blank"><i class="fab fa-npm"></i></a></li>
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/my-profile-img.png" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt="">-->
+      <h1 class="sitename">Umar Farook M</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="https://www.linkedin.com/in/umarfarookm/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="https://github.com/umarfarookm" class="git-hub" target="_blank"><i class="bi bi-github"></i></a>
+      <a href="https://www.npmjs.com/~umarfarook89" class="npm" target="_blank">
+        <svg class="svg-inline--fa fa-npm fa-w-18" aria-hidden="true" data-prefix="fab" data-icon="npm" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M288 288h-32v-64h32v64zm288-128v192H288v32H160v-32H0V160h576zm-416 32H32v128h64v-96h32v96h32V192zm160 0H192v160h64v-32h64V192zm224 0H352v128h64v-96h32v96h32v-96h32v96h32V192z"></path></svg>
+      </a>
+      <a href="live:umarfarook89" class="skype" target="_blank"><i class="bi bi-skype"></i></a>
+
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
       </ul>
-    </div><!--//profile-->
-    <a class="btn btn-cta-primary float-right" href="mailto:umarfarook89@gmil.com" target="_blank"><i class="fas fa-paper-plane"></i> Contact Me</a>
-  </div><!--//container-->
-</header><!--//header-->
+    </nav>
 
-<div class="container sections-wrapper">
-  <div class="row">
-    <div class="primary col-lg-8 col-12">
-      <section class="about section">
-        <div class="section-inner">
-          <h2 class="heading mb-20">About Me</h2>
-          <div class="content">
-            <p class="mb-7">
-              With over 12 years of experience, I am a results-driven professional excelling in the development of web, desktop, and mobile applications.
-              My expertise extends to frameworks such as Spring Boot, Express, Node, Angular, and React, complemented by a deep understanding of related web technologies.
-              I specialize in microservices architecture and have a proven track record of implementing DevOps practices, utilizing AWS and Kubernetes.
-              I thrive in dynamic tech landscapes, consistently delivering innovative solutions. Let's connect and explore opportunities to collaborate in the ever-evolving world of technology.
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>Umar Farook M</h2>
+        <p>I'm <span class="typed" data-typed-items="Web App, Mobile App, Desktop App, Full Stack">Web App</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>Developer</p>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <p>
+          With over 12 years of experience, I am a results-driven professional excelling in the development of web, desktop, and mobile applications.
+          My expertise extends to frameworks such as Spring Boot, Express, Node, Angular, and React, complemented by a deep understanding of related web technologies.
+          I specialize in microservices architecture and have a proven track record of implementing DevOps practices, utilizing AWS and Kubernetes. I thrive in dynamic tech landscapes, consistently delivering innovative solutions.
+          Let's connect and explore opportunities to collaborate in the ever-evolving world of technology.
+        </p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4">
+            <img src="assets/img/my-profile-img.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 content">
+            <h2>Full Stack Developer.</h2>
+            <p class="fst-italic py-3">
+              Experienced Full Stack Developer with expertise in microservices, DevOps, AWS, and Kubernetes. Currently a Senior Technical Lead at Provility Software Solutions
             </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>05 April 1989</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>https://umarfarook.vercel.app</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 9600969829</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Chennai, India</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>35</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>B.Tech IT</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>umarfarook89@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Not Available</span></li>
+                </ul>
+              </div>
+            </div>
+            <p class="py-3">
+              I enjoy playing cricket and badminton, and I'm proud to have won the company tournament in badminton.
+              These activities keep me active and provide a great balance to my professional life.
+            </p>
+          </div>
+        </div>
 
-          </div><!--//content-->
-        </div><!--//section-inner-->
-      </section><!--//section-->
+      </div>
 
-      <section class="experience section">
-        <div class="section-inner">
-          <h2 class="heading">Work Experience</h2>
-          <div class="content">
-            <div class="item">
-              <h3 class="title">Senior Technical Lead - <span class="place"><a href="https://provility.com/" target="_blank"><strong>Provility Software Solutions Pvt Ltd</strong></a></span> <span
-                class="year"
-              >(2013 - Present)</span></h3>
+    </section><!-- /About Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-emoji-laughing"></i>
+              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+              <span class="plus">+</span>
+              <p><strong>Happy Clients</strong> <span>Trusted Partnerships</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-folder"></i>
+              <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="purecounter"></span>
+              <span class="plus">+</span>
+              <p><strong>Projects</strong> <span>Diverse Solutions Delivered</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-box-seam"></i>
+              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+              <span class="plus">+</span>
+              <p><strong>Products</strong> <span>Innovative Offerings</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-award"></i>
+              <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
+              <span class="plus">+</span>
+              <p><strong>Years Experience</strong> <span>Proven Track Record</span></p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+
+      </div>
+
+    </section>
+    <!-- /Stats Section -->
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+        <p>Proficient in front-end and back-end development, database management, as well as having strong management and design skills.</p>
+        <p>Learning is a continuous process, So I learn continuously about cutting-edge technologies.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row skills-content skills-animation">
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>Angular, Ionic, React & React Native</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="80"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Javascript &amp; jQuery</span> <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="95"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>HTML5, CSS3, SASS, LESS &amp; Bootstrap</span> <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="95"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Sketch, Zeplin & Adobe Photoshop (Design Tools)</span> <i class="val">60%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="60"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Wordpress</span> <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="70"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill"><span>Node.js, Express & Mongodb</span> <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="75"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Java, Kotlin, Spring & Spring Boot</span> <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="70"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Github, Bitbucket & JIRA (Project Management Tools)</span> <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="80"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>Graph DB - Neo4j</span> <i class="val">60%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="60"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+            <div class="progress">
+              <span class="skill"><span>AWS & Kubernetes</span> <i class="val">50%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50"></div>
+              </div>
+            </div><!-- End Skills Item -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Skills Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <p>A highly skilled Full Stack Developer with expertise in designing and developing web, desktop, and mobile applications. Proven ability to lead development teams and ensure project quality from initial concept to final deliverable. Expert in requirement analysis, UI/UX design, and comprehensive product testing.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Summary</h3>
+
+            <div class="resume-item pb-0">
+              <h4>Umar Farook M</h4>
+              <p><em>Innovative and deadline-driven Full Stack Developer with 12+ years of experience designing and developing web, desktop, and mobile applications from initial concept to final, polished deliverable.</em></p>
               <ul>
-                <li>Developing Dynamic Web, Desktop and Mobile applications based on HTML5, CSS3 and JavaScript frameworks like Angular, React.</li>
-                <li>Developing mobile applications using Ionic and React Native.</li>
-                <li>Hands on experience in developing responsive web application using Bootstrap.</li>
-                <li>Experience on Node JS web service integration (JSON)</li>
-                <li>Familiar with No-SQL Mongo DB.</li>
-                <li>Effective in working independently and collaboratively in teams.</li>
-                <li>Ability to learn new technologies in short span and implement independently.</li>
-                <li>Have experience working on version control tools GitHub.</li>
-                <li>Experience in deploying web application on Heroku Cloud (PaaS) and now</li>
+                <li>Pallikaranai, Chennai - 100</li>
+                <li>+91 96009 69829</li>
+                <li>umarfarook89@gmail.com</li>
               </ul>
-            </div><!--//item-->
-            <div class="item">
-              <h3 class="title">Software Engineer - <span class="place"><a
-                href="https://www.justdial.com/Chennai/Abi-Software-Solutions-Near-Pentagon-Hotel-Anna-Nagar-West/044PXX44-XX44-120426174252-D6W5_BZDET" target="_blank"
-              >ABI Software Solutions</a></span> <span class="year">(2012 - 2013)</span></h3>
+            </div><!-- Edn Resume Item -->
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Bachelors of Information technology (B.Tech IT)</h4>
+              <h5>2008 - 2011</h5>
+              <p><em> <a target="_blank" href="https://www.bnec.ac.in/"> Bharath Niketan Engineering College, Theni, TN, India.</a></em></p>
+              <p>Bharath Niketan Engineering College (BNEC) is an ISO 9001:2015 Certified Engineering College, Affiliated to Anna University, Chennai and is Approved by AICTE. It was established in the year 1998.</p>
+            </div><!-- Edn Resume Item -->
+
+            <div class="resume-item">
+              <h4>Diploma in Computer Engineering (DCE)</h4>
+              <h5>2006 - 2008</h5>
+              <p><em><a target="_blank" href="http://collegesintamilnadu.com/Polytechnic/St-Xaviers-Polytechnic-College/Srivaikundam/Courses/439">St. Xaviers Polytechnic College, Tirunelveli, TN, India.</a></em></p>
+              <p>St. Xavier's Polytechnic College is located in Tamilnadu. The education institution was established in the year 1985. The College was affiliated to Directorate of Technical Education, Chennai. It is approved by AICTE (All India Council for Technical Education).</p>
+            </div><!-- Edn Resume Item -->
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Senior Technical Lead</h4>
+              <h5>2013 - Present</h5>
+              <p><em><a href="https://provility.com" target="_blank">Provility Software Solutions, OMR, Perungudi, Chennai</a></em></p>
               <ul>
-                <li>Web apps UI and UX designing.</li>
-                <li>Requirement analysis and Documentation.</li>
-                <li>Defect reporting and tracking.</li>
-                <li>Module integration and Product Testing</li>
+                <li>Lead in the design, development, and implementation of the dynamic web, desktop and mobile applications</li>
+                <li>Delegate tasks to the 10 members of the development team and provide counsel on all aspects of the project. </li>
+                <li>Supervise the assessment of all requirement documents in order to ensure quality and accuracy of the development</li>
+                <li>Oversee the efficient use of production projects and monitor the logs.</li>
               </ul>
-            </div><!--//item-->
+            </div><!-- Edn Resume Item -->
 
-            <div class="item">
-              <h3 class="title">Tutor - <span class="place"><a href="https://apollocomputereducationltd.business.site/" target="_blank">Apollo Computer Education</a></span> <span class="year">(2011 - 2012)</span>
-              </h3>
+            <div class="resume-item">
+              <h4>Software Developer</h4>
+              <h5>2012 - 2013</h5>
+              <p><em><a href="https://www.linkedin.com/company/abi-software-solutions/" target="_blank">ABI Software Solutions, Anna Nagar, Chennai</a></em></p>
               <ul>
-                <li>Developed computer training materials.</li>
-                <li>Assist with Microsoft Office like word, excel, and powerpoint.</li>
-                <li>Basic programming and web designing</li>
+                <li>Designed UI and UX for various web applications, ensuring intuitive and user-friendly interfaces.</li>
+                <li>Conducted thorough requirement analysis and detailed documentation to support project development.</li>
+                <li>Reported and tracked defects, ensuring timely resolution and quality control.</li>
+                <li>Integrated modules and performed comprehensive product testing to guarantee seamless functionality.</li>
               </ul>
-            </div><!--//item-->
+            </div><!-- Edn Resume Item -->
 
-          </div><!--//content-->
-        </div><!--//section-inner-->
-      </section><!--//section-->
+          </div>
 
-      <section class="latest section">
-        <div class="section-inner">
-          <h2 class="heading">Projects</h2>
-          <div class="content">
+        </div>
 
-            <div class="item featured text-center">
-              <h3 class="title"><a href="https://sagamath.com/" target="_blank">SagaMath <span class="pro-title">(Product)</span> - Web Application</a></h3>
-              <p class="summary">sagamath is a web tool that allows a user to make Interactive Mathematical Text Book - Lessons fully aligned with your +2 board syllabus</p>
-              <div class="featured-image has-ribbon">
-                <a href="" target="_blank">
-                  <img class="img-fluid project-image" src="assets/images/projects/sagamath.png" alt="sagamath"/>
-                </a>
-                <div class="ribbon">
-                  <div class="text">New</div>
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>I excel in transforming concepts into high-quality, user-friendly digital solutions. My portfolio showcases a diverse range of projects, including dynamic websites, robust web apps, and innovative mobile applications, all tailored to meet clients' unique needs and exceed their expectations. With experience in over 25 projects and products, I have successfully collaborated with teams to deliver exceptional results on time.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-product">Product</li>
+            <li data-filter=".filter-website">Website</li>
+            <li data-filter=".filter-mobile-app">Mobile App</li>
+            <li data-filter=".filter-web-app">Web App</li>
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/travel-tools.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Travel Tools Web</h4>
+                  <p>Travel Tools Web used to connect travellers with healthcare, education, employment, families or friends, Travel Tool’s mobility solutions improve and drive lives globally.</p>
+                  <a href="assets/img/portfolio/travel-tools.jpg" title="Travel Tools Web" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://dart.mygopass.org/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
+            </div><!-- End Portfolio Item -->
 
-            </div><!--//item-->
-            <hr class="divider"/>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mobile-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/weldtrace-mobile.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>WeldTrace</h4>
+                  <p>WeldTrace mobile app is a companion app for welders, inspectors and supervisors delivering fabrication projects using WeldTrace, the welding management software.</p>
+                  <a href="assets/img/portfolio/weldtrace-mobile.jpg" title="WeldTrace" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://play.google.com/store/apps/details?id=com.weldtrace" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
 
-            <div class="item row">
-              <a class="col-md-4 col-12" href="#" target="_blank">
-                <img class="img-fluid project-image" src="assets/images/projects/infoship.png" alt="Info Ship"/>
-              </a>
-              <div class="desc col-md-8 col-12">
-                <h3 class="title"><a href="#" target="_blank">Info Ship <span class="pro-title">(Service)</span> – Web App</a></h3>
-                <p>Technologies:</p>
-                <ul>
-                  <li>Angular 10(Typescript)</li>
-                </ul>
-                <p>Responsibility:</p>
-                <ul>
-                  <li>Lead the team to development for this application.</li>
-                  <li>Used angular develop this state-of-art web application.</li>
-                  <li>Involved at development phase, testing phase and bug fixing.</li>
-                </ul>
-              </div><!--//desc-->
-            </div><!--//item-->
-            <hr class="divider"/>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-website">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/umar-portfolio.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Own Portfolio Website</h4>
+                  <p>Present your professional journey with a personalized touch using a sleek and responsive portfolio website built with HTML, CSS, JavaScript, and Bootstrap.</p>
+                  <a href="assets/img/portfolio/umar-portfolio.jpg" title="Own Portfolio Website" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://umarfarook.vercel.app/" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
 
-            <div class="item row">
-              <a class="col-md-4 col-12" href="https://test.easyvisa.com" target="_blank">
-                <img class="img-fluid project-image" src="assets/images/projects/easyvisa.png" alt="Eform"/>
-              </a>
-              <div class="desc col-md-8 col-12">
-                <h3 class="title"><a href="https://test.easyvisa.com" target="_blank">Easy Visa <span class="pro-title">(Service)</span> – Web App</a></h3>
-                <p>Technologies:</p>
-                <ul>
-                  <li>Angular 10(Typescript), NgRx, ngxFormly (Dynamic Forms)</li>
-                </ul>
-                <p>Responsibility:</p>
-                <ul>
-                  <li>Involved on Questionnaire UI development for this application.</li>
-                  <li>Used angular and NgRx to develop this state-of-art web application.</li>
-                  <li>Involved at development phase, testing phase and bug fixing.</li>
-                </ul>
-              </div><!--//desc-->
-            </div><!--//item-->
-            <hr class="divider"/>
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/mathdisk.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Math Disk</h4>
+                  <p>Mathematical studio to build interactive simulations in 2D and 3D.</p>
+                  <a href="assets/img/portfolio/mathdisk.jpg" title="Math Disk" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://youtu.be/X40lE_gMrjI" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
 
-            <div class="item row">
-              <a class="col-md-4 col-12" href="https://www.robogebra.com/home" target="_blank">
-                <img class="img-fluid project-image" src="assets/images/projects/robogebra.png" alt="robogebra"/>
-              </a>
-              <div class="desc col-md-8 col-12">
-                <h3 class="title"><a href="https://www.robogebra.com/home" target="_blank">Robogebra <span class="pro-title">(Product)</span> – Web App</a></h3>
-                <p>Technologies:</p>
-                <ul>
-                  <li>Angular 6(Typescript)</li>
-                </ul>
-                <p>Responsibility:</p>
-                <ul>
-                  <li>Involved on UI and Frontend development for this application.</li>
-                  <li>Used angular to develop this state-of-art web application.</li>
-                  <li>Involved at requirement discussion phase, development phase, testing phase and bug fixing.</li>
-                </ul>
-              </div><!--//desc-->
-            </div><!--//item-->
-            <hr class="divider"/>
-            <div class="item row">
-              <a class="col-md-4 col-12" href="http://www.learnoptimus.com" target="_blank">
-                <img class="img-fluid project-image" src="assets/images/projects/learnoptimus.png" alt="Easyvisa"/>
-              </a>
-              <div class="desc col-md-8 col-12">
-                <h3 class="title"><a href="http://www.learnoptimus.com" target="_blank">Learn Optimus <span class="pro-title">(Product)</span> – Web App</a></h3>
-                <p>Technologies:</p>
-                <ul>
-                  <li>Angular 6(Typescript)</li>
-                </ul>
-                <p>Responsibility:</p>
-                <ul>
-                  <li>Involved on UI and Frontend development for this application.</li>
-                  <li>Used angular to develop this state-of-art web application.</li>
-                  <li>Involved at requirement discussion phase, development phase, testing phase and bug fixing.</li>
-                </ul>
-              </div><!--//desc-->
-            </div><!--//item-->
-            <hr class="divider"/>
-            <div class="item row">
-              <a class="col-md-4 col-12" href="javascript:void(0)">
-                <img class="img-fluid project-image" src="assets/images/projects/learnoptima.png" alt="learnoptima"/>
-              </a>
-              <div class="desc col-md-8 col-12">
-                <h3 class="title"><a href="javascript:void(0)">Learn Optima <span class="pro-title">(Product)</span> - Mobile Application</a></h3>
-                <p>Technologies:</p>
-                <ul>
-                  <li>ReactNative, Node.js, Mongodb</li>
-                </ul>
-                <p>Responsibility:</p>
-                <ul>
-                  <li>Involved on full application development for this application.</li>
-                  <li>• Used React and Redux to develop this state-of-art web application.</li>
-                  <li>Involved at requirement discussion phase, development phase, testing phase and bug fixing.</li>
-                </ul>
-              </div><!--//desc-->
-            </div><!--//item-->
-            <hr class="divider"/>
-            <div class="item row">
-              <a class="col-md-4 col-12" href="http://app.eform.com" target="_blank">
-                <img class="img-fluid project-image" src="assets/images/projects/eform.png" alt="Eform"/>
-              </a>
-              <div class="desc col-md-8 col-12">
-                <h3 class="title"><a href="http://app.eform.com" target="_blank">Eform <span class="pro-title">(Service)</span> - Web Application</a></h3>
-                <p>Technologies:</p>
-                <ul>
-                  <li>Angular.js, Spring Boot, Sql DB, Html5, CSS3 and Bootstrap.</li>
-                </ul>
-                <p>Responsibility:</p>
-                <ul>
-                  <li>Involved on UI development for this application.</li>
-                  <li>Used Angular JS to develop this state-of-art web application.</li>
-                  <li>Involved at requirement discussion phase, development phase, testing phase and bug fixing.</li>
-                </ul>
-              </div><!--//desc-->
-            </div><!--//item-->
-            <hr class="divider"/>
-            <div class="item row">
-              <a class="col-md-4 col-12" href="https://producer.link/" target="_blank">
-                <img class="img-fluid project-image" src="assets/images/projects/brokerlink.png" alt="Broker Link"/>
-              </a>
-              <div class="desc col-md-8 col-12">
-                <h3 class="title"><a href="https://producer.link/" target="_blank">Broker Link <span class="pro-title">(Service)</span> - Web Application</a></h3>
-                <p>Technologies:</p>
-                <ul>
-                  <li>React.js, Redux, Graphql, Html5, CSS3 and Bootstrap.</li>
-                </ul>
-                <p>Responsibility:</p>
-                <ul>
-                  <li>Involved on UI development for this application.</li>
-                  <li>Used React JS to develop this state-of-art web application.</li>
-                  <li>Involved at requirement discussion phase, development phase, testing phase and bug fixing.</li>
-                </ul>
-              </div><!--//desc-->
-            </div><!--//item-->
-            <hr class="divider"/>
-            <div class="item row">
-              <a class="col-md-4 col-12" href="https://provility.com/" target="_blank">
-                <img class="img-fluid project-image" src="assets/images/projects/provility.png" alt="Provility"/>
-              </a>
-              <div class="desc col-md-8 col-12">
-                <h3 class="title"><a href="https://provility.com/" target="_blank">Provility.com <span class="pro-title">(Website)</span> - Website</a></h3>
-                <p>Technologies:</p>
-                <ul>
-                  <li>Wordpress, Html5, CSS3.</li>
-                </ul>
-                <p>Responsibility:</p>
-                <ul>
-                  <li>Take the full responsibility of this website</li>
-                  <li>Used wordpress theme and plugins to develop this website.</li>
-                </ul>
-              </div><!--//desc-->
-            </div><!--//item-->
-            <hr class="divider"/>
-            <div class="item row">
-              <a class="col-md-4 col-12" href="https://www.testdunia.com/" target="_blank">
-                <img class="img-fluid project-image" src="assets/images/projects/testdunia.png" alt="Testdunia"/>
-              </a>
-              <div class="desc col-md-8 col-12">
-                <h3 class="title"><a href="https://www.testdunia.com/" target="_blank">Testdunia <span class="pro-title">(Service)</span> – Web Application</a></h3>
-                <p>Technologies:</p>
-                <ul>
-                  <li> AngularJs, Nodejs, Mongodb, Html5, CSS3 and Bootstrap.</li>
-                </ul>
-                <p>Responsibility:</p>
-                <ul>
-                  <li>Involved only on UI development for this application.</li>
-                </ul>
-              </div><!--//desc-->
-            </div><!--//item-->
-            <hr class="divider"/>
-            <div class="item row">
-              <a class="col-md-4 col-12" href="https://wtia.weldq.com" target="_blank">
-                <img class="img-fluid project-image" src="assets/images/projects/weldq.png" alt="WeldQ"/>
-              </a>
-              <div class="desc col-md-8 col-12">
-                <h3 class="title"><a href="https://wtia.weldq.com" target="_blank">WeldQ <span class="pro-title">(Service)</span> – Web and Mobile Applications</a></h3>
-                <p>Technologies:</p>
-                <ul>
-                  <li> AngularJs, Nodejs, Mongodb, Ionic framework, Html5, CSS3 and Bootstrap.</li>
-                </ul>
-                <p>Responsibility:</p>
-                <ul>
-                  <li>Used Angular JS to develop this state-of-art web application.</li>
-                  <li>Involved at requirement discussion phase, development phase, testing phase and bug fixing.</li>
-                  <li>Integrated bootstrap for responsive web design.</li>
-                  <li>Involved in the complete mobile application.</li>
-                </ul>
-                <p><a class="more-link" href="https://play.google.com/store/apps/details?id=com.ionicframework.weldqmobiledeploy335562&hl=en" target="_blank"><i class="fas fa-external-link-alt"></i>Mobile
-                  App</a></p>
-              </div><!--//desc-->
-            </div><!--//item-->
-            <hr class="divider"/>
-            <div class="item row">
-              <a class="col-md-4 col-12" href="http://app.smartweldingmanager.com" target="_blank">
-                <img class="img-fluid project-image" src="assets/images/projects/spmt.png" alt="Smart Welding Software"/>
-              </a>
-              <div class="desc col-md-8 col-12">
-                <h3 class="title"><a href="http://app.smartweldingmanager.com" target="_blank">Smart Welding Software <span class="pro-title">(Service)</span> – Web, Desktop and Tablet Apps</a></h3>
-                <p>Technologies:</p>
-                <ul>
-                  <li> AngularJs, Nodejs, Mongodb, Ionic framework, ElectronJs, Html5, CSS3 and Bootstrap.</li>
-                </ul>
-                <p>Responsibility:</p>
-                <ul>
-                  <li>Used Angular JS to develop this state-of-art web application.</li>
-                  <li>Involved at requirement discussion phase, development phase, testing phase and bug fixing.</li>
-                  <li>Involved in complete tablet application development using Ionic Framework.</li>
-                  <li>Involved in development of desktop application using ElectronJs.</li>
-                  <li>Build Apk file and Published in google play store.</li>
-                </ul>
-                <p><a class="more-link" href="https://play.google.com/store/apps/details?id=com.ionicframework.spmttablet508975" target="_blank"><i class="fas fa-external-link-alt"></i>Tablet App</a>
-                </p>
-              </div><!--//desc-->
-            </div><!--//item-->
-            <hr class="divider"/>
-            <div class="item row">
-              <a class="col-md-4 col-12" href="https://play.google.com/store/apps/details?id=com.ionicframework.redcart614850&hl=en" target="_blank">
-                <img class="img-fluid project-image" src="assets/images/projects/redcart.png" alt="Redcart"/>
-              </a>
-              <div class="desc col-md-8 col-12">
-                <h3 class="title"><a href="https://play.google.com/store/apps/details?id=com.ionicframework.redcart614850&hl=en" target="_blank">Redcart <span class="pro-title">(Service)</span> –
-                  Mobile App (Grocery Shopping App)</a></h3>
-                <p>Technologies:</p>
-                <ul>
-                  <li> Ionic framework, Nodejs, Mongodb, Soap Api</li>
-                </ul>
-                <p>Responsibility:</p>
-                <ul>
-                  <li>Involved in complete mobile application development using Ionic Framework.</li>
-                  <li>Involved at requirement discussion phase, development phase, testing phase and bug fixing.</li>
-                  <li>Integrated Soap api integration.</li>
-                  <li>Build Apk file and Published in google play store.</li>
-                </ul>
-                <p><a class="more-link" href="https://play.google.com/store/apps/details?id=com.ionicframework.redcart614850&hl=en" target="_blank"><i class="fas fa-external-link-alt"></i>Mobile
-                  App</a></p>
-              </div><!--//desc-->
-            </div><!--//item-->
-            <hr class="divider"/>
-            <div class="item row">
-              <a class="col-md-4 col-12" href="http://www.robocompass.com" target="_blank">
-                <img class="img-fluid project-image" src="assets/images/projects/robocompass.png" alt="Robo Compass"/>
-              </a>
-              <div class="desc col-md-8 col-12">
-                <h3 class="title"><a href="http://www.robocompass.com" target="_blank">Robo Compass <span class="pro-title">(Product)</span> – Web and Desktop Application</a></h3>
-                <p>Technologies:</p>
-                <ul>
-                  <li> Html 5, CSS3, AwayJs, Nodejs, Grunt for Build task, Electron Js.</li>
-                </ul>
-                <p>Responsibility:</p>
-                <ul>
-                  <li>Involved in complete website designing.</li>
-                  <li>Also took responsibilities to project UI development and testing.</li>
-                  <li>And also involved in create content, user guide and support documents.</li>
-                  <li>Involved in development of desktop application using ElectronJs.</li>
-                  <li>Object Texture Images created by using Adobe Photoshop</li>
-                </ul>
-              </div><!--//desc-->
-            </div><!--//item-->
-            <hr class="divider"/>
-            <div class="item row">
-              <a class="col-md-4 col-12" href="http://www.mathdisk.com/" target="_blank">
-                <img class="img-fluid project-image" src="assets/images/projects/mathdisk.png" alt="MathDisk"/>
-              </a>
-              <div class="desc col-md-8 col-12">
-                <h3 class="title"><a href="http://www.mathdisk.com/" target="_blank">MathDisk <span class="pro-title">(Product)</span> – Web Application</a></h3>
-                <p>Technologies:</p>
-                <ul>
-                  <li> Adobe Flex, JSP, Spring, Processing, HTML, CSS and Mongodb</li>
-                </ul>
-                <p>Responsibility:</p>
-                <ul>
-                  <li>Involved in website designing.</li>
-                  <li>Also took responsibilities to project UI Development and manual testing</li>
-                  <li>And also involved in create content and worksheets, user guide and support documents.</li>
-                </ul>
-              </div><!--//desc-->
-            </div><!--//item-->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/eform.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>EForm</h4>
+                  <p>Eform – is a disruptive software platform which enable Digital Transformation by
+                    simplifying and automating repeated tasks like data and document collection</p>
+                  <a href="assets/img/portfolio/eform.png" title="EForm" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://eform.com/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
 
-          </div><!--//content-->
-        </div><!--//section-inner-->
-      </section><!--//section-->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mobile-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/learnoptima.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>LearnOptima</h4>
+                  <p>Simplify student management with LearnOptima, the app designed to enhance organization and academic success.</p>
+                  <a href="assets/img/portfolio/learnoptima.jpg" title="LearnOptima" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="javascript:void(0)" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
 
-    </div><!--//primary-->
-    <div class="secondary col-lg-4 col-12">
-      <aside class="info aside section">
-        <div class="section-inner">
-          <h2 class="heading sr-only">Basic Information</h2>
-          <div class="content">
-            <ul class="list-unstyled">
-              <li><i class="fas fa-map-marker-alt"></i><span class="sr-only">Location:</span>Chennai, India</li>
-              <li><i class="fas fa-envelope"></i><span class="sr-only">Email:</span><a href="mailto:umarfarook89@gmil.com" target="_blank">umarfarook89@gmail.com</a></li>
-              <li><i class="fas fa-link"></i><span class="sr-only">Website:</span><a href="https://umarfarook.now.sh/" target="_blank">https://umarfarook.now.sh</a></li>
-            </ul>
-          </div><!--//content-->
-        </div><!--//section-inner-->
-      </aside><!--//aside-->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/weldq.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>WeldQ</h4>
+                  <p>WeldQ is available for welders, inspectors, supervisors, and coordinators to manage their qualifications and certifications, and to use as a digital ID card or wallet.</p>
+                  <a href="assets/img/portfolio/weldq.jpg" title="WeldQ" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://wtia.weldq.com/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
 
-      <aside class="skills aside section">
-        <div class="section-inner">
-          <h2 class="heading">Skills</h2>
-          <div class="content">
-            <p class="intro">
-              Learning is a continuous process, So I learn continuously about cutting-edge technologies.</p>
-            <div class="skillset">
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-website">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/provility.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Provility Website</h4>
+                  <p>A sleek and responsive website built using HTML, CSS, JavaScript, and Bootstrap, showcasing modern design and seamless user experience.</p>
+                  <a href="assets/img/portfolio/provility.jpg" title="Provility Website" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://provility.com/" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
 
-              <div class="item">
-                <h3 class="level-title">Angular.js, Angular &amp; React <span class="level-label"><i class="fas fa-info-circle"></i>Pro</span></h3>
-                <div class="level-bar">
-                  <div class="level-bar-inner" data-level="75%">
-                  </div>
-                </div><!--//level-bar-->
-              </div><!--//item-->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/broker-link.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Choice Health Brokers</h4>
+                  <p>An internal CMS platform for real estate brokers and agents built from scratch. It
+                    includes an in-browser dialer/phone capable of handling incoming and outgoing calls using twilio
+                    API.</p>
+                  <a href="assets/img/portfolio/broker-link.png" title="Choice Health Brokers" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://producer.link/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
 
-              <div class="item">
-                <h3 class="level-title">Javascript &amp; jQuery<span class="level-label"><i class="fas fa-info-circle"></i>Expert</span></h3>
-                <div class="level-bar">
-                  <div class="level-bar-inner" data-level="95%">
-                  </div>
-                </div><!--//level-bar-->
-              </div><!--//item-->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mobile-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/redcart.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>RedCart</h4>
+                  <p>Streamline your grocery shopping with Redcart, the app that delivers convenience and freshness right to your door.</p>
+                  <a href="assets/img/portfolio/redcart.jpg" title="RedCart" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://play.google.com/store/apps/details?id=com.ionicframework.redcart614850&hl=en" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
 
-              <div class="item">
-                <h3 class="level-title">HTML5, CSS3, SASS, LESS &amp; Bootstrap<span class="level-label"><i class="fas fa-info-circle"></i>Expert</span></h3>
-                <div class="level-bar">
-                  <div class="level-bar-inner" data-level="95%">
-                  </div>
-                </div><!--//level-bar-->
-              </div><!--//item-->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/robocompass.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Robo Compass</h4>
+                  <p>RoboCompass is an interactive tool to teach and learn geometrical construction. It also
+                    helps to visualize transformations, Patterns, and Tessellations.</p>
+                  <a href="assets/img/portfolio/robocompass.jpg" title="Robo Compass" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://www.robocompass.com/app" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
 
-              <div class="item">
-                <h3 class="level-title">Node.js, Express, Mongodb, SQLDB &amp; Spring Boot<span class="level-label"><i class="fas fa-info-circle"></i>Mid</span></h3>
-                <div class="level-bar">
-                  <div class="level-bar-inner" data-level="60%">
-                  </div>
-                </div><!--//level-bar-->
-              </div><!--//item-->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/digikey-schemeit.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>DigiKey - Scheme-it</h4>
+                  <p>Scheme-it is an online schematic and diagramming tool that allows anyone to design
+                    and share electronic circuit diagrams.</p>
+                  <a href="assets/img/portfolio/digikey-schemeit.png" title="DigiKey - Scheme-it" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://www.digikey.com/en/schemeit/project" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
 
-              <div class="item">
-                <h3 class="level-title">Sketch, Zeplin, WordPress &amp; Adobe Photoshop<span class="level-label"><i class="fas fa-info-circle"></i>Mid</span></h3>
-                <div class="level-bar">
-                  <div class="level-bar-inner" data-level="60%">
-                  </div>
-                </div><!--//level-bar-->
-              </div><!--//item-->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product ">
+              <div class="portfolio-content h-100 latest">
+                <img src="assets/img/portfolio/mathnarrate.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info has-ribbon">
+                  <h4>Math Narrate</h4>
+                  <p>Demonstrate mathematical procedures step by step,
+                    Mathnarrate as a powerful tool to communicate your mathematical notes in an engaging fashion</p>
+                  <a href="assets/img/portfolio/mathnarrate.jpg" title="Math Narrate" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://ashrafsharf.github.io/mathnarrate-deploy" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                  <!--<div class="ribbon">
+                    <div class="text">Soon</div>
+                  </div>-->
+                </div>
 
-              <div class="item">
-                <h3 class="level-title">Github<span class="level-label"><i class="fas fa-info-circle"></i>Pro</span></h3>
-                <div class="level-bar">
-                  <div class="level-bar-inner" data-level="90%">
-                  </div>
-                </div><!--//level-bar-->
-              </div><!--//item-->
+              </div>
+            </div><!-- End Portfolio Item -->
 
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mobile-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/weldq-mobile.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>WeldQ</h4>
+                  <p>The WeldQ mobile app is for the registered users of the WeldQ platform. It is available for welders, inspectors, supervisors, and coordinators to manage their qualifications and certifications.</p>
+                  <a href="assets/img/portfolio/weldq-mobile.jpg" title="WeldQ" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://play.google.com/store/apps/details?id=com.ionicframework.weldqmobiledeploy335562&hl=en_AU&gl=US" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/weld-trace.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>WeldTrace</h4>
+                  <p>Welding Management Software
+                    Transform your welding management system and solve your pain points in fabrication with WeldTrace</p>
+                  <a href="assets/img/portfolio/weld-trace.png" title="WeldTrace" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://www.weldtrace.com/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-website">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/robocompass-site.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Robocompass Website</h4>
+                  <p>Explore the future of automation with Robocompass, a cutting-edge website crafted with HTML, CSS, JavaScript, and Bootstrap for a dynamic and engaging user experience.</p>
+                  <a href="assets/img/portfolio/robocompass-site.jpg" title="Robocompass Website" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://www.robocompass.com" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/infoship.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>InfoShip</h4>
+                  <p>An omnichannel logistics strategy cuts shipping costs, speeds up delivery, and boosts customer experience.</p>
+                  <a href="assets/img/portfolio/infoship.jpg" title="InfoShip" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="javascript:void(0)" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-mobile-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/math-narrate-mobile.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Math Narrate Mobile App</h4>
+                  <p>A mobile app built with Ionic that guides users through mathematical procedures step by step, making learning math intuitive and engaging.</p>
+                  <a href="assets/img/portfolio/math-narrate-mobile.jpg" title="Math Narrate Mobile App" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://play.google.com/store/apps/details?id=io.app.robogebra" target="_blank" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/trustvantage.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>TrustVantage</h4>
+                  <p>TrustVantage (TM) a Tool to Automate Reporting and Compliance with FATCA and
+                    Common Reporting Standards (CRS) for Trust Companies, released by CRS View Ltd.</p>
+                  <a href="assets/img/portfolio/trustvantage.png" title="TrustVantage" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://www.trustvantage.com/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-website">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/mathnarrate-website.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>Math Narrate Website</h4>
+                  <p>Created a website to help teachers demonstrate math procedures step by step and instantly share lessons, compatible with SmartBoards, computers, and online whiteboards.</p>
+                  <a href="assets/img/portfolio/mathnarrate-website.png" title="Math Narrate Website" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://ashrafsharf.github.io/mathnarrate-deploy/home" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web-app">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/easyvisa.png" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>EasyVisa</h4>
+                  <p>EasyVisa is an application for attorneys to efficiently manage clients, records, forms, and visa processes, streamlining applications and boosting productivity.</p>
+                  <a href="assets/img/portfolio/easyvisa.png" title="EasyVisa" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://www.easyvisa.com/" title="More Details" class="details-link" target="_blank"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Need to get in touch with me! I'd love to hear from you. </p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-5">
+
+            <div class="info-wrap">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Address</h3>
+                  <p>B01, Block3, Ganesh Avenue, Pallikaranai, Chennai, India</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Call Me</h3>
+                  <p>+91 96009 69829</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>umarfarook89@gmail.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.390122634627!2d80.20485867463617!3d12.946869987366199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525dca45a206c1%3A0xf957ff6a9ce3a46d!2sCasa%20Grande%20Tulipso%20Apartments!5e0!3m2!1sen!2sin!4v1721285662559!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-          </div><!--//content-->
-        </div><!--//section-inner-->
-      </aside><!--//section-->
+          </div>
 
-      <aside class="education aside section">
-        <div class="section-inner">
-          <h2 class="heading">Education</h2>
-          <div class="content">
-            <div class="item">
-              <h3 class="title"><i class="fas fa-graduation-cap"></i> B.Tech-Information Technology</h3>
-              <h4 class="university"><a href="http://www.bnec.ac.in/" target="_blank">Bharath Niketan Eng College </a><span class="year">(2008-2011)</span></h4>
-            </div><!--//item-->
-            <div class="item">
-              <h3 class="title"><i class="fas fa-graduation-cap"></i> Diploma-Computer Engineering</h3>
-              <h4 class="university"><a href="http://collegesintamilnadu.com/Polytechnic/St-Xaviers-Polytechnic-College/Srivaikundam/Courses/439" target="_blank">St. Xaviers Polytechnic
-                College </a><span class="year">(2006-2008)</span></h4>
-            </div><!--//item-->
-          </div><!--//content-->
-        </div><!--//section-inner-->
-      </aside><!--//section-->
+          <div class="col-lg-7">
+            <form class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
 
-      <aside class="languages aside section">
-        <div class="section-inner">
-          <h2 class="heading">Languages</h2>
-          <div class="content">
-            <ul class="list-unstyled">
-              <li class="item">
-                <span class="title"><strong>Tamil:</strong></span>
-                <span class="level">Native Speaker <br class="visible-xs"/><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
-                  class="fas fa-star"
-                ></i> </span>
-              </li><!--//item-->
-              <li class="item">
-                <span class="title"><strong>English:</strong></span>
-                <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></span>
-              </li><!--//item-->
-            </ul>
-          </div><!--//content-->
-        </div><!--//section-inner-->
-      </aside><!--//section-->
+                <div class="col-md-6">
+                  <label for="name-field" class="pb-2">Your Name</label>
+                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                </div>
 
+                <div class="col-md-6">
+                  <label for="email-field" class="pb-2">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                </div>
 
-      <aside class="list conferences aside section">
-        <div class="section-inner">
-          <h2 class="heading">Conferences</h2>
-          <div class="content">
-            <ul class="list-unstyled">
-              <li><i class="far fa-calendar-alt"></i> <a href="http://www.developermarch.com/developersummit/2017/report/presentations.html" target="_blank">GIDS 2017</a> (Bangalore, India)</li>
-              <li><i class="far fa-calendar-alt"></i> <a href="https://www.flickr.com/photos/developersummit/52888267509/in/album-72177720308180390/" target="_blank">GIDS 2023</a> (Bangalore, India)
-              </li>
-            </ul>
-          </div><!--//content-->
-        </div><!--//section-inner-->
-      </aside><!--//section-->
+                <div class="col-md-12">
+                  <label for="subject-field" class="pb-2">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                </div>
 
-      <aside class="credits aside section">
-        <div class="section-inner">
-          <h2 class="heading">Credits</h2>
-          <div class="content">
-            <ul class="list-unstyled pb-2">
-              <li><a href="https://getbootstrap.com/" target="_blank"><i class="fas fa-external-link-alt"></i>Bootstrap</a></li>
-              <li><a href="https://fortawesome.github.io/Font-Awesome/" target="_blank"><i class="fas fa-external-link-alt"></i>FontAwesome</a></li>
-              <li><a href="https://jquery.com/" target="_blank"><i class="fas fa-external-link-alt"></i>jQuery</a></li>
-            </ul>
+                <div class="col-md-12">
+                  <label for="message-field" class="pb-2">Message</label>
+                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                </div>
 
-            <hr/>
+                <div class="col-md-12 text-center">
+                  <button type="submit" id="sendMail">Send Message</button>
+                </div>
 
-          </div><!--//content-->
-        </div><!--//section-inner-->
-      </aside><!--//section-->
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
 
-    </div><!--//secondary-->
-  </div><!--//row-->
-</div><!--//masonry-->
+        </div>
 
-<!-- ******FOOTER****** -->
-<footer class="footer">
-  <div class="container text-center">
-    <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out our commercial license options via our website: themes.3rdwavemedia.com */-->
-    <small class="copyright">Copyright ©
-      <span id="copyright">
-        <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-    </span>
-      Umar Farook <i class="fas fa-heart"></i></small>
-  </div><!--//container-->
-</footer><!--//footer-->
+      </div>
 
-<!-- Javascript -->
-<script type="text/javascript" src="assets/plugins/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="assets/plugins/popper.min.js"></script>
-<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<!-- custom js -->
-<script type="text/javascript" src="assets/js/main.js"></script>
+    </section>
+    <!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Umar's Portfolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
-</html>
 
+</html>
