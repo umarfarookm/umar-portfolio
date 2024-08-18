@@ -240,4 +240,7 @@
   });
 
 
+  const d = new Date();
+  document.getElementById("yearSpan").innerHTML = d.getFullYear().toString();
+
 })();
