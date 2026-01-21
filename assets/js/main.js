@@ -128,11 +128,243 @@
   });
 
   /**
-   * Initiate glightbox
+   * Custom Portfolio Modal
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
+
+  // Function to open custom modal
+  window.openCustomModal = function(imageSrc, title, descriptionClass) {
+    const modal = document.getElementById('customPortfolioModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+
+    // Set image
+    modalImage.src = imageSrc;
+    modalImage.alt = title;
+
+    // Set title
+    modalTitle.textContent = title;
+
+    // Get and set description from hidden div
+    const descElement = document.querySelector('.' + descriptionClass);
+    if (descElement) {
+      modalDescription.innerHTML = descElement.innerHTML;
+    }
+
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Function to close custom modal
+  window.closeCustomModal = function() {
+    const modal = document.getElementById('customPortfolioModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  // Close modal on escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeCustomModal();
+    }
   });
+
+  // Close modal on outside click
+  document.getElementById('customPortfolioModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeCustomModal();
+    }
+  });
+
+  // Initialize portfolio preview links with custom modal
+  document.querySelectorAll('.preview-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const imageSrc = this.getAttribute('href');
+      const title = this.getAttribute('title');
+      const dataCustom = this.getAttribute('data-custom-modal');
+      const isTabbedModal = this.getAttribute('data-tabbed-modal');
+
+      if (isTabbedModal) {
+        // Use tabbed modal for grouped items
+        openTabbedModal(title, dataCustom);
+      } else if (dataCustom) {
+        // Use custom modal
+        openCustomModal(imageSrc, title, dataCustom);
+      }
+    });
+  });
+
+  /**
+   * Portfolio Image Carousel
+   */
+  function initCarousel(carouselElement) {
+    const slides = carouselElement.querySelectorAll('.portfolio-carousel-slide');
+    const dots = carouselElement.querySelectorAll('.carousel-dot');
+    let currentSlide = 0;
+    let intervalId;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (dots[i]) dots[i].classList.remove('active');
+      });
+
+      if (slides[index]) {
+        slides[index].classList.add('active');
+        if (dots[index]) dots[index].classList.add('active');
+      }
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function startCarousel() {
+      intervalId = setInterval(nextSlide, 3000);
+    }
+
+    function stopCarousel() {
+      clearInterval(intervalId);
+    }
+
+    // Initialize first slide
+    showSlide(0);
+    startCarousel();
+
+    // Pause on hover
+    carouselElement.addEventListener('mouseenter', stopCarousel);
+    carouselElement.addEventListener('mouseleave', startCarousel);
+
+    // Manual navigation via dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentSlide = index;
+        showSlide(currentSlide);
+        stopCarousel();
+        startCarousel();
+      });
+    });
+  }
+
+  // Initialize all carousels
+  document.querySelectorAll('.portfolio-carousel').forEach(carousel => {
+    initCarousel(carousel);
+  });
+
+  /**
+   * Tabbed Modal for Grouped Portfolio Items
+   */
+  window.openTabbedModal = function(title, modalClass) {
+    const modal = document.getElementById('customPortfolioModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalTabs = document.getElementById('modalTabs');
+    const modalDescription = document.getElementById('modalDescription');
+
+    // Add class to identify this as a tabbed modal
+    modal.classList.add('tabbed-modal');
+
+    modalTitle.textContent = title;
+
+    const descElement = document.querySelector('.' + modalClass);
+    if (descElement) {
+      const descClone = descElement.cloneNode(true);
+
+      // Extract tabs from the cloned content
+      const tabsContainer = descClone.querySelector('.modal-tabs');
+      const tabContents = descClone.querySelectorAll('.modal-tab-content');
+
+      if (tabsContainer && tabContents.length > 0) {
+        // Move tabs to header
+        modalTabs.innerHTML = '';
+        modalTabs.appendChild(tabsContainer);
+
+        // Put tab contents in description area (hide only the main tab image)
+        modalDescription.innerHTML = '';
+        tabContents.forEach(content => {
+          // Hide only the main tab variant image (not tech icons)
+          const mainImage = content.querySelector('img:first-of-type');
+          if (mainImage && !mainImage.classList.contains('tech-icon')) {
+            mainImage.style.display = 'none';
+          }
+          modalDescription.appendChild(content);
+        });
+
+        // Get the updated references after moving to modal
+        const tabButtons = modalTabs.querySelectorAll('.modal-tab-btn');
+        const newTabContents = modalDescription.querySelectorAll('.modal-tab-content');
+
+        function switchTab(index) {
+          // Remove active class from all
+          tabButtons.forEach(b => b.classList.remove('active'));
+          newTabContents.forEach(c => c.classList.remove('active'));
+
+          // Add active to clicked
+          if (tabButtons[index]) tabButtons[index].classList.add('active');
+          if (newTabContents[index]) {
+            newTabContents[index].classList.add('active');
+
+            // Update the left side image with the tab's variant image
+            // Try to find image with class first, then fall back to first img tag
+            let tabImage = newTabContents[index].querySelector('.tab-variant-image');
+            if (!tabImage) {
+              tabImage = newTabContents[index].querySelector('img');
+            }
+
+            if (tabImage && modalImage) {
+              modalImage.src = tabImage.src;
+              modalImage.alt = tabImage.alt;
+              // Hide the image in the content area (it's shown on the left)
+              tabImage.style.display = 'none';
+            }
+          }
+        }
+
+        tabButtons.forEach((btn, index) => {
+          btn.addEventListener('click', () => switchTab(index));
+        });
+
+        // Activate first tab by default
+        switchTab(0);
+      }
+    }
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Update close modal to reset layout
+  const originalCloseModal = window.closeCustomModal;
+  window.closeCustomModal = function() {
+    const modal = document.getElementById('customPortfolioModal');
+    const modalTabs = document.getElementById('modalTabs');
+    const modalDescription = document.getElementById('modalDescription');
+
+    // Remove tabbed-modal class
+    modal.classList.remove('tabbed-modal');
+
+    // Clear tabs from header
+    if (modalTabs) {
+      modalTabs.innerHTML = '';
+    }
+
+    // Reset only the main tab images to be visible again (tech icons should stay visible)
+    if (modalDescription) {
+      const tabImages = modalDescription.querySelectorAll('.modal-tab-content > img:first-of-type');
+      tabImages.forEach(img => {
+        if (!img.classList.contains('tech-icon')) {
+          img.style.display = '';
+        }
+      });
+    }
+
+    originalCloseModal();
+  };
 
   /**
    * Init isotope layout and filters
