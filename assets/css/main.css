@@ -1644,11 +1644,11 @@ section,
 
   .custom-modal-image {
     padding: 15px;
-    max-height: 35vh;
+    max-height: 45vh;
   }
 
   .custom-modal-image img {
-    max-height: 30vh;
+    max-height: 45vh;
   }
 
   .custom-modal-details {
@@ -1737,9 +1737,10 @@ section,
 .carousel-indicators {
   position: absolute;
   bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   display: flex;
+  justify-content: center;
   gap: 6px;
   z-index: 10;
 }
@@ -1843,18 +1844,5 @@ section,
     flex-shrink: 0;
   }
 
-  /* For tabbed modals on mobile: hide left image, show images in tabs */
-  .custom-portfolio-modal.tabbed-modal .custom-modal-image {
-    display: none;
-  }
-
-  .custom-portfolio-modal.tabbed-modal .tab-variant-image {
-    display: block !important;
-  }
-
-  /* For tabbed modals on mobile: make details section full width */
-  .custom-portfolio-modal.tabbed-modal .custom-modal-details {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
+  /* Tabbed modals use same layout as regular modals on mobile */
 }

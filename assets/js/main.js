@@ -284,14 +284,9 @@
         modalTabs.innerHTML = '';
         modalTabs.appendChild(tabsContainer);
 
-        // Put tab contents in description area (hide only the main tab image)
+        // Put tab contents in description area
         modalDescription.innerHTML = '';
         tabContents.forEach(content => {
-          // Hide only the main tab variant image (not tech icons)
-          const mainImage = content.querySelector('img:first-of-type');
-          if (mainImage && !mainImage.classList.contains('tech-icon')) {
-            mainImage.style.display = 'none';
-          }
           modalDescription.appendChild(content);
         });
 
@@ -313,12 +308,20 @@
             // Try to find image with class first, then fall back to first img tag
             let tabImage = newTabContents[index].querySelector('.tab-variant-image');
             if (!tabImage) {
-              tabImage = newTabContents[index].querySelector('img');
+              // Get first image that's not a tech icon
+              const images = newTabContents[index].querySelectorAll('img');
+              for (let img of images) {
+                if (!img.classList.contains('tech-icon')) {
+                  tabImage = img;
+                  break;
+                }
+              }
             }
 
             if (tabImage && modalImage) {
               modalImage.src = tabImage.src;
               modalImage.alt = tabImage.alt;
+              modalImage.style.display = 'block';
               // Hide the image in the content area (it's shown on the left)
               tabImage.style.display = 'none';
             }
@@ -380,7 +383,13 @@
         itemSelector: '.isotope-item',
         layoutMode: layout,
         filter: filter,
-        sortBy: sort
+        sortBy: sort,
+        getSortData: {
+          date: '[data-date]'
+        },
+        sortAscending: {
+          date: false
+        }
       });
     });
 
