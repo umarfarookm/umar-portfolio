@@ -52,6 +52,20 @@
   --contrast-color: #ffffff;
 }
 
+/* Layout rhythm, radii and elevation tokens — single place to tune page density */
+:root {
+  --section-padding: clamp(34px, 4vw, 56px); /* vertical breathing room per section */
+  --section-title-gap: clamp(20px, 2.4vw, 30px); /* gap between a section heading and its content */
+  --card-padding: clamp(20px, 2.2vw, 28px);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --border-subtle: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  --shadow-sm: 0 1px 2px rgba(4, 11, 20, 0.04), 0 2px 8px rgba(4, 11, 20, 0.05);
+  --shadow-md: 0 2px 4px rgba(4, 11, 20, 0.05), 0 12px 28px rgba(4, 11, 20, 0.08);
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
@@ -511,23 +525,25 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: var(--section-padding) 0;
   overflow: clip;
+  scroll-margin-top: 20px;
 }
 
 /*--------------------------------------------------------------
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  padding-bottom: 60px;
+  padding-bottom: var(--section-title-gap);
   position: relative;
 }
 
 .section-title h2 {
-  font-size: 32px;
+  font-size: clamp(26px, 3.2vw, 34px);
   font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
   position: relative;
 }
 
@@ -582,6 +598,7 @@ section,
   z-index: 3;
 }
 
+.hero h1,
 .hero h2 {
   margin: 0;
   font-size: 64px;
@@ -616,6 +633,7 @@ section,
 }
 
 @media (max-width: 768px) {
+  .hero h1,
   .hero h2 {
     font-size: 32px;
   }
@@ -639,9 +657,13 @@ section,
 }
 
 .about .content ul li {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
+}
+
+.about .content ul li:last-child {
+  margin-bottom: 0;
 }
 
 .about .content ul strong {
@@ -659,7 +681,7 @@ section,
 # Stats Section
 --------------------------------------------------------------*/
 .stats .stats-item {
-  padding: 30px;
+  padding: 22px;
   width: 100%;
 }
 
@@ -696,51 +718,18 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Skills Section
---------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
-}
-
-.skills .progress .skill {
-  color: var(--heading-color);
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: var(--heading-font);
-}
-
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
-.skills .progress-bar-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
-  height: 10px;
-}
-
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/
 .resume .resume-title {
   color: var(--heading-color);
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 32px;
+  margin-bottom: 18px;
+}
+
+.resume .resume-title:first-child {
+  margin-top: 0;
 }
 
 .resume .resume-item {
@@ -803,15 +792,15 @@ section,
 
 .portfolio .portfolio-filters li {
   cursor: pointer;
-  display: inline-block;
-  padding: 0;
+  padding: 8px 18px;
   font-size: 14px;
-  font-weight: 400;
-  margin: 0 10px;
+  font-weight: 500;
+  margin: 0;
   line-height: 1;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  transition: all 0.3s ease-in-out;
+  border-radius: 50px;
+  border: var(--border-subtle);
+  background: var(--surface-color);
+  transition: all 0.25s var(--ease-out);
 }
 
 .portfolio .portfolio-filters li:hover,
@@ -1070,7 +1059,11 @@ section,
 }
 
 .contact .info-item {
-  margin-bottom: 40px;
+  margin-bottom: 26px;
+}
+
+.contact .info-item:last-child {
+  margin-bottom: 0;
 }
 
 .contact .info-item i {
@@ -1845,4 +1838,1473 @@ section,
   }
 
   /* Tabbed modals use same layout as regular modals on mobile */
+}
+
+/*--------------------------------------------------------------
+# Hero repositioning (headline, subline, CTA)
+--------------------------------------------------------------*/
+.hero .hero-eyebrow {
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  margin: 0 0 12px 0;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.hero h1,
+.hero h2 {
+  font-size: 48px;
+  max-width: 20ch;
+}
+
+.hero .hero-sub {
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 58ch;
+  margin-top: 16px;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+}
+
+.hero .hero-cta {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+.hero .hero-link {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.hero .hero-link:hover,
+.hero .hero-link:focus-visible {
+  border-bottom-color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .hero .hero-eyebrow {
+    font-size: 14px;
+  }
+
+  .hero h1,
+  .hero h2 {
+    font-size: 30px;
+  }
+
+  .hero .hero-sub {
+    font-size: 17px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Accessibility: visible keyboard focus + reduced motion
+--------------------------------------------------------------*/
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.portfolio-filters li:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Capability groups (replaces skill percentage bars)
+--------------------------------------------------------------*/
+.skills .capability-group {
+  background: var(--surface-color);
+  border-radius: 8px;
+  padding: 26px 24px;
+  height: 100%;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.skills .capability-group h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skills .capability-group h3 i {
+  color: var(--accent-color);
+  font-size: 20px;
+}
+
+.skills .capability-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills .capability-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 9px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.skills .capability-list li:last-child {
+  margin-bottom: 0;
+}
+
+.skills .capability-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Services section additions (stack line + closing CTA)
+--------------------------------------------------------------*/
+.services .service-item {
+  background: var(--surface-color);
+  border-radius: 8px;
+  padding: 28px 26px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+}
+
+.services .service-item .title {
+  margin-bottom: 10px;
+}
+
+.services .service-item .description {
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.services .service-stack {
+  font-size: 13px;
+  margin: 0;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.services .services-cta {
+  margin-top: 40px;
+  text-align: center;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 8px;
+  padding: 34px 24px;
+}
+
+.services .services-cta h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 10px;
+}
+
+.services .services-cta p {
+  max-width: 60ch;
+  margin: 0 auto 6px auto;
+  font-size: 15px;
+}
+
+/*--------------------------------------------------------------
+# Contact form status and fallback
+--------------------------------------------------------------*/
+.contact .form-status {
+  margin: 16px 0 0 0;
+  font-size: 15px;
+  min-height: 1.4em;
+}
+
+.contact .form-status.is-error {
+  color: #d63384;
+  font-weight: 600;
+}
+
+.contact .form-fallback {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+}
+
+.contact .form-fallback a {
+  color: var(--accent-color);
+}
+
+/*==============================================================
+# EDITORIAL REDESIGN
+# Off-white/near-black typographic layer with a sticky top nav
+# and an OS-driven dark palette. Loaded last, so it overrides
+# the iPortfolio template rules above.
+==============================================================*/
+
+/*--------------------------------------------------------------
+# Palette — light is the base, dark redefines only the tokens
+--------------------------------------------------------------*/
+:root {
+  --bg: #faf9f7;
+  --bg-sunken: #f2f0eb;
+  --surface: #ffffff;
+  --ink: #16150f;
+  --ink-soft: #423e36;
+  --ink-muted: #6d675c;
+  --ink-faint: #726b60;
+  --rule: #e3dfd6;
+  --rule-strong: #cfc9bd;
+  --accent: #1f4ed8;
+  --accent-ink: #ffffff;
+  --accent-wash: #eef1fd;
+
+  /* Map the template's variables onto the new palette so
+     untouched template rules inherit the redesign. */
+  --background-color: var(--bg);
+  --default-color: var(--ink);
+  --heading-color: var(--ink);
+  --accent-color: var(--accent);
+  --surface-color: var(--surface);
+  --contrast-color: var(--accent-ink);
+
+  --default-font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --heading-font: "Inter Tight", "Inter", system-ui, sans-serif;
+  --nav-font: "Inter", system-ui, sans-serif;
+  --mono-font: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --shell: 1180px;
+  --gutter: clamp(20px, 4vw, 48px);
+  --nav-h: 68px;
+  --section-padding: clamp(48px, 5.6vw, 82px);
+  --section-title-gap: clamp(28px, 3.5vw, 44px);
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --bg-sunken: #111720;
+    --surface: #151c26;
+    --ink: #e6edf3;
+    --ink-soft: #bcc7d3;
+    --ink-muted: #8b98a6;
+    --ink-faint: #77828f;
+    --rule: #1f2833;
+    --rule-strong: #2d3846;
+    --accent: #58a6ff;
+    --accent-ink: #0d1117;
+    --accent-wash: #111d2e;
+  }
+}
+
+/* The template scopes these on individual sections; keep them
+   working but resolve them against the new palette. */
+.light-background {
+  --background-color: var(--bg-sunken);
+  --surface-color: var(--surface);
+}
+
+.dark-background {
+  --background-color: var(--ink);
+  --default-color: var(--bg);
+  --heading-color: var(--bg);
+  --surface-color: var(--ink-soft);
+  --contrast-color: var(--ink);
+}
+
+/*--------------------------------------------------------------
+# Base typography
+--------------------------------------------------------------*/
+body {
+  background: var(--bg);
+  color: var(--ink-soft);
+  font-family: var(--default-font);
+  font-size: 16.5px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  color: var(--ink);
+  letter-spacing: -0.022em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+a {
+  color: var(--accent);
+}
+
+strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  opacity: 1;
+  margin: 0;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* Mono eyebrow used for section numbers, kickers and meta */
+.section-label {
+  font-family: var(--mono-font);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin: 0 0 18px 0;
+}
+
+/*--------------------------------------------------------------
+# Shell — the sidebar is gone, so nothing is offset any more
+--------------------------------------------------------------*/
+.container,
+.container-fluid {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.header ~ main,
+.header ~ #footer {
+  margin-left: 0;
+}
+
+main.main {
+  padding-top: var(--nav-h);
+}
+
+section,
+.section {
+  background: transparent;
+  color: var(--ink-soft);
+  padding: var(--section-padding) 0;
+  scroll-margin-top: var(--nav-h);
+  overflow: clip;
+}
+
+.section.light-background {
+  background: var(--bg-sunken);
+}
+
+/*--------------------------------------------------------------
+# Sticky top nav
+--------------------------------------------------------------*/
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  left: 0;
+  bottom: auto;
+  width: 100%;
+  height: var(--nav-h);
+  padding: 0;
+  overflow: visible;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-right: 0;
+  border-bottom: 1px solid var(--rule);
+  z-index: 1000;
+  transition: none;
+}
+
+.header-inner {
+  max-width: var(--shell);
+  height: 100%;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.header .logo-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--rule-strong);
+}
+
+.header .logo-text {
+  font-family: var(--heading-font);
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.navmenu {
+  margin-left: auto;
+}
+
+.navmenu ul {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navmenu a,
+.navmenu a:focus {
+  display: block;
+  width: auto;
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-family: var(--nav-font);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  white-space: nowrap;
+  transition: color 0.2s var(--ease-out), background-color 0.2s var(--ease-out);
+}
+
+.navmenu a:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+.navmenu .active,
+.navmenu .active:focus {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 7%, transparent);
+}
+
+.header-cta {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 9px 16px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 50px;
+  white-space: nowrap;
+  transition: all 0.22s var(--ease-out);
+}
+
+.header-cta:hover {
+  color: var(--accent-ink);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.header .header-toggle {
+  display: none;
+  position: static;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 26px;
+  border: 1px solid var(--rule);
+}
+
+.header .header-toggle:hover {
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+  color: var(--ink);
+}
+
+/* --- Mobile: nav collapses into a full-screen sheet --------- */
+@media (max-width: 991px) {
+  .header .header-toggle {
+    display: flex;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  /* The header's backdrop-filter makes it the containing block for
+     fixed-position children, which collapsed this sheet to 0 height.
+     Anchor it to the header with absolute positioning instead. */
+  .navmenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: calc(100dvh - var(--nav-h));
+    margin: 0;
+    background: var(--bg);
+    border-top: 1px solid var(--rule);
+    padding: 12px var(--gutter) 32px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s var(--ease-out), transform 0.25s var(--ease-out), visibility 0.25s;
+    overflow-y: auto;
+  }
+
+  .header.header-show .navmenu {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .navmenu ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    padding: 16px 4px;
+    border-radius: 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 19px;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .navmenu .active,
+  .navmenu .active:focus {
+    background: transparent;
+    color: var(--accent);
+  }
+}
+
+/*--------------------------------------------------------------
+# Section titles
+--------------------------------------------------------------*/
+.section-title {
+  padding-bottom: var(--section-title-gap);
+}
+
+.section-title h2 {
+  max-width: 24ch;
+}
+
+.section-title h2 {
+  font-size: clamp(30px, 4.4vw, 46px);
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+/* The template's little accent underline is replaced by the
+   mono numbering above the heading. */
+.section-title h2:after {
+  display: none;
+}
+
+.section-title p {
+  font-size: clamp(16px, 1.6vw, 18px);
+  color: var(--ink-muted);
+  margin: 0;
+  max-width: 68ch;
+}
+
+/*--------------------------------------------------------------
+# Hero
+--------------------------------------------------------------*/
+.hero {
+  /* Fill the visible viewport, less the fixed nav, at every size.
+     svh (not vh) so mobile browser chrome does not cause a jump. */
+  min-height: calc(100svh - var(--nav-h));
+  display: flex;
+  align-items: center;
+  padding: clamp(40px, 6vh, 88px) 0;
+  background: transparent;
+}
+
+.hero:before {
+  display: none;
+}
+
+.hero h1,
+.hero h2 {
+  font-size: clamp(38px, 7.4vw, 82px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  max-width: 17ch;
+  margin: 0;
+  color: var(--ink);
+}
+
+.hero .section-label {
+  font-size: 12px;
+  margin-bottom: 22px;
+}
+
+.hero-rule {
+  margin: clamp(28px, 4vw, 44px) 0 clamp(22px, 3vw, 30px);
+  max-width: 640px;
+}
+
+.hero .hero-sub {
+  font-size: clamp(16.5px, 1.8vw, 19.5px);
+  line-height: 1.55;
+  color: var(--ink-muted);
+  max-width: 58ch;
+  margin: 0;
+}
+
+.hero .hero-cta {
+  margin-top: clamp(28px, 3.5vw, 40px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 28px;
+}
+
+.hero .hero-link {
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule-strong);
+  padding-bottom: 2px;
+  transition: border-color 0.2s var(--ease-out);
+}
+
+.hero .hero-link:hover,
+.hero .hero-link:focus-visible {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+
+/*--------------------------------------------------------------
+# Buttons
+--------------------------------------------------------------*/
+.project-link-btn,
+.contact .php-email-form button[type=submit] {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--ink);
+  color: var(--bg) !important;
+  border: 1px solid var(--ink);
+  border-radius: 50px;
+  padding: 13px 26px;
+  margin: 0;
+  font-family: var(--default-font);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  transition: all 0.24s var(--ease-out);
+}
+
+.project-link-btn:hover,
+.contact .php-email-form button[type=submit]:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink) !important;
+  transform: translateY(-1px);
+}
+
+.project-link-btn i {
+  margin: 0;
+  font-size: 15px;
+  transition: transform 0.24s var(--ease-out);
+}
+
+.project-link-btn:hover i {
+  transform: translateX(3px);
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .content h2 {
+  font-size: clamp(21px, 2.3vw, 27px);
+  font-weight: 600;
+  margin: 0 0 18px 0;
+}
+
+.about img {
+  border-radius: 2px;
+  filter: grayscale(100%) contrast(1.05);
+  transition: filter 0.5s var(--ease-out);
+}
+
+.about img:hover {
+  filter: grayscale(0%);
+}
+
+.about .content .fst-italic {
+  font-style: normal !important;
+  padding: 0 0 18px 0 !important;
+  font-size: 17px;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--rule-strong);
+  padding-left: 18px !important;
+  margin-bottom: 20px;
+}
+
+.about .content p {
+  color: var(--ink-muted);
+}
+
+.about .content ul {
+  margin-top: 26px;
+  border-top: 1px solid var(--rule);
+}
+
+.about .content ul li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 15px;
+}
+
+.about .content ul i {
+  display: none;
+}
+
+.about .content ul strong {
+  font-family: var(--mono-font);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-weight: 500;
+  min-width: 88px;
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+# Stats — rule-separated figures, no cards
+--------------------------------------------------------------*/
+.stats {
+  padding-top: 0;
+}
+
+.stats .stats-item {
+  padding: 24px 0 0 0;
+  border-top: 1px solid var(--rule-strong);
+  background: none;
+  height: 100%;
+}
+
+.stats .stats-item .purecounter,
+.stats .stats-item .plus {
+  font-family: var(--heading-font);
+  font-size: clamp(40px, 5vw, 58px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  margin: 0;
+  display: inline;
+}
+
+.stats .stats-item p {
+  margin: 16px 0 0 0;
+  padding: 0;
+  font-family: var(--default-font);
+  font-size: 14.5px;
+  color: var(--ink-muted);
+}
+
+.stats .stats-item p strong {
+  display: block;
+  font-family: var(--mono-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+
+/*--------------------------------------------------------------
+# Services — numbered editorial rows
+--------------------------------------------------------------*/
+.service-list {
+  border-top: 1px solid var(--rule-strong);
+}
+
+.services .service-row {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr) minmax(0, 0.62fr);
+  gap: 12px 32px;
+  align-items: start;
+  /* Inset from the container edge so the numbers are not flush
+     against it. Padding sits inside the border box, so the rule
+     underneath still spans the full width. */
+  padding: clamp(24px, 3vw, 34px) 0 clamp(24px, 3vw, 34px) clamp(14px, 1.8vw, 26px);
+  border-bottom: 1px solid var(--rule);
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: background-color 0.3s var(--ease-out);
+}
+
+.services .service-row:hover {
+  background: color-mix(in srgb, var(--ink) 3%, transparent);
+}
+
+.services .service-index {
+  font-family: var(--mono-font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  margin: 6px 0 0 0;
+}
+
+.services .service-row .title {
+  font-size: clamp(19px, 2.1vw, 24px);
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  color: var(--ink);
+}
+
+.services .service-row .description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+.services .service-stack {
+  margin: 6px 0 0 0;
+  font-family: var(--mono-font);
+  font-size: 12px;
+  line-height: 1.75;
+  color: var(--ink-faint);
+}
+
+@media (max-width: 767px) {
+  .services .service-row {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 6px 14px;
+  }
+
+  .services .service-stack {
+    grid-column: 2;
+  }
+}
+
+/* Closing CTA — a bordered block, not a floating card */
+.services .services-cta {
+  margin-top: clamp(40px, 5vw, 64px);
+  padding: clamp(32px, 4vw, 52px) clamp(24px, 3vw, 40px);
+  text-align: center;
+  background: var(--bg-sunken);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  box-shadow: none;
+}
+
+.services .services-cta h3 {
+  font-size: clamp(22px, 2.6vw, 30px);
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.services .services-cta p {
+  max-width: 56ch;
+  margin: 0 auto 26px auto;
+  font-size: 16px;
+  color: var(--ink-muted);
+}
+
+/*--------------------------------------------------------------
+# Capabilities — column lists under hairline rules
+--------------------------------------------------------------*/
+.skills .capability-group {
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--rule-strong);
+  border-radius: 0;
+  padding: 20px 0 0 0;
+  box-shadow: none;
+  height: 100%;
+}
+
+.skills .capability-group h3 {
+  font-family: var(--mono-font);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 14px 0;
+  display: block;
+}
+
+.skills .capability-list li {
+  padding: 7px 0 7px 0;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink-muted);
+  border-bottom: 1px solid var(--rule);
+}
+
+.skills .capability-list li:last-child {
+  border-bottom: 0;
+}
+
+.skills .capability-list li::before {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+# Resume
+--------------------------------------------------------------*/
+.resume .resume-title {
+  font-family: var(--mono-font);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin: 44px 0 22px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+.resume .resume-title:first-child {
+  margin-top: 0;
+}
+
+.resume .resume-item {
+  border-left: 0;
+  padding: 0 0 28px 0;
+  margin: 0;
+}
+
+.resume .resume-item::before {
+  display: none;
+}
+
+.resume .resume-item h4 {
+  font-family: var(--heading-font);
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  line-height: 1.3;
+  margin: 0 0 6px 0;
+}
+
+.resume .resume-item h5 {
+  display: inline-block;
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0 0 10px 0;
+  font-family: var(--mono-font);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+
+.resume .resume-item p,
+.resume .resume-item ul li {
+  font-size: 15.5px;
+  color: var(--ink-muted);
+}
+
+.resume .resume-item p em {
+  font-style: normal;
+}
+
+.resume .resume-item ul {
+  padding-left: 0;
+  list-style: none;
+  margin-top: 12px;
+}
+
+.resume .resume-item ul li {
+  position: relative;
+  padding: 0 0 8px 16px;
+  line-height: 1.55;
+}
+
+.resume .resume-item ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px;
+  height: 1px;
+  background: var(--rule-strong);
+}
+
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+.portfolio .portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-start;
+  margin: 0 0 clamp(24px, 3vw, 34px) 0;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.portfolio .portfolio-filters li {
+  padding: 7px 15px;
+  margin: 0;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  font-family: var(--mono-font);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  background: none;
+  transition: all 0.22s var(--ease-out);
+}
+
+.portfolio .portfolio-filters li:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 6%, transparent);
+}
+
+.portfolio .portfolio-filters li.filter-active {
+  color: var(--bg);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.portfolio .portfolio-content {
+  border-radius: 3px;
+  border: 1px solid var(--rule);
+  box-shadow: none;
+  background: var(--surface);
+  transition: border-color 0.3s var(--ease-out);
+}
+
+.portfolio .portfolio-content:hover {
+  border-color: var(--rule-strong);
+  transform: none;
+}
+
+.portfolio .portfolio-content:hover img {
+  transform: scale(1.03);
+}
+
+.portfolio .portfolio-content .portfolio-info {
+  background: color-mix(in srgb, var(--ink) 88%, transparent);
+  padding: 20px;
+}
+
+.portfolio .portfolio-content .portfolio-info h4 {
+  background: none;
+  color: var(--bg);
+  padding: 0;
+  font-family: var(--mono-font);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.portfolio .portfolio-content .portfolio-info p {
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  text-align: left;
+  font-family: var(--default-font);
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--bg) 78%, transparent);
+}
+
+/*--------------------------------------------------------------
+# Contact — underline fields, no boxed cards
+--------------------------------------------------------------*/
+.contact .info-wrap {
+  background: none;
+  box-shadow: none;
+  border: 0;
+  border-top: 1px solid var(--rule-strong);
+  padding: 4px 0 0 0;
+}
+
+.contact .info-item {
+  display: block !important;
+  margin: 0;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.contact .info-item i {
+  display: none;
+}
+
+.contact .info-item h3 {
+  font-family: var(--mono-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin: 0 0 6px 0;
+}
+
+.contact .info-item p {
+  font-size: 17px;
+  color: var(--ink);
+  margin: 0;
+}
+
+.contact .php-email-form {
+  background: none;
+  box-shadow: none;
+  border: 0;
+  padding: 0;
+  height: auto;
+}
+
+.contact .php-email-form label {
+  display: block;
+  font-family: var(--mono-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  padding: 0 0 6px 0 !important;
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  width: 100%;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--rule-strong);
+  border-radius: 0;
+  padding: 9px 0;
+  font-family: var(--default-font);
+  font-size: 16px;
+  color: var(--ink);
+  transition: border-color 0.2s var(--ease-out);
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+  outline: none;
+  border-bottom-color: var(--ink);
+  box-shadow: none;
+}
+
+.contact .php-email-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.contact .php-email-form .col-md-12.text-center {
+  text-align: left !important;
+  margin-top: 8px;
+}
+
+.contact .form-fallback {
+  font-family: var(--mono-font);
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-top: 14px;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+  background: var(--bg);
+  border-top: 1px solid var(--rule);
+  padding: clamp(40px, 5vw, 60px) 0 32px;
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 28px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.footer-tagline {
+  max-width: 44ch;
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink-muted);
+}
+
+.footer-social {
+  display: flex;
+  gap: 8px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  color: var(--ink-muted);
+  font-size: 15px;
+  background: none;
+  transition: all 0.22s var(--ease-out);
+}
+
+.footer-social a:hover {
+  color: var(--bg);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.footer-social .npm svg {
+  width: 22px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 22px;
+}
+
+.footer .copyright,
+.footer .credits {
+  margin: 0;
+  font-family: var(--mono-font);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  text-align: left;
+}
+
+/*--------------------------------------------------------------
+# Scroll-top button
+--------------------------------------------------------------*/
+.scroll-top {
+  background: var(--ink);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+}
+
+.scroll-top i {
+  color: var(--bg);
+}
+
+.scroll-top:hover {
+  background: var(--accent);
+}
+
+.scroll-top:hover i {
+  color: var(--accent-ink);
+}
+
+/*--------------------------------------------------------------
+# Focus ring
+--------------------------------------------------------------*/
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.header-toggle:focus-visible,
+.portfolio-filters li:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+#preloader {
+  background: var(--bg);
+}
+
+/* Inline links inside body copy read as ink with a rule, not as
+   bright accent text — keeps the accent rare and meaningful. */
+.resume a,
+.about a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--rule-strong);
+  transition: border-color 0.2s var(--ease-out);
+}
+
+.resume a:hover,
+.about a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+/*--------------------------------------------------------------
+# Alignment corrections — Contact, Resume, About
+--------------------------------------------------------------*/
+
+/* --- Contact -------------------------------------------------
+   Three contact details can never balance a six-field form in a
+   side-by-side split, which left a tall void in the short column.
+   The details now sit in a rule-separated row of three above the
+   form, matching the language used by Stats and Capabilities. */
+.contact .contact-details {
+  margin-bottom: clamp(42px, 4vw, 52px);
+}
+
+.contact .info-item {
+  display: block !important;
+  margin: 0;
+  padding: 20px 0 0 0;
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 0;
+  height: 100%;
+}
+
+.contact .info-item i {
+  display: none;
+}
+
+.contact .info-item h3 {
+  font-family: var(--mono-font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin: 0 0 8px 0;
+}
+
+.contact .info-item p {
+  font-size: 17px;
+  color: var(--ink);
+  margin: 0;
+}
+
+.contact .php-email-form .row {
+  --bs-gutter-y: 24px;
+}
+
+.contact .php-email-form textarea {
+  min-height: 96px;
+}
+
+/* --- Resume --------------------------------------------------
+   Full-width border-bottom underlines on long institution names
+   read as heavy rules. Use a real text underline instead: it
+   hugs the glyphs and breaks correctly across lines. */
+.resume a,
+.about a {
+  border-bottom: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s var(--ease-out);
+}
+
+.resume a:hover,
+.about a:hover {
+  text-decoration-color: var(--ink);
+}
+
+/* --- About ---------------------------------------------------
+   The portrait is shorter than the text column beside it, which
+   left a void underneath. Let it follow the reader instead. */
+@media (min-width: 992px) {
+  .about .row > .col-lg-4 {
+    align-self: start;
+    position: sticky;
+    top: calc(var(--nav-h) + 28px);
+  }
+}
+
+/* The About fact list was nested inside the text column, so it began
+   indented while every other block starts at the content edge. */
+.about .about-facts {
+  margin-top: clamp(28px, 3vw, 40px);
+}
+
+
+/* --- Hero on small screens ------------------------------------
+   min-height: 88svh forced a ~715px section around ~396px of
+   content, and flex centring split the surplus evenly, leaving a
+   large dead gap above and below. On mobile let the content set
+   the height and use fixed padding rather than vh-based, which
+   scaled the gap up with the viewport. */
+@media (max-width: 991px) {
+  .hero {
+    /* Still full height, but the content is scaled up to occupy it
+       rather than sitting in a small block ringed by dead space. */
+    padding: clamp(32px, 4vh, 56px) 0;
+  }
+
+  .hero h1,
+  .hero h2 {
+    font-size: clamp(40px, 9.2vw, 62px);
+    max-width: 14ch;
+  }
+
+  .hero .hero-sub {
+    font-size: clamp(17px, 4.2vw, 21px);
+  }
+
+  .hero-rule {
+    margin: clamp(26px, 4vh, 40px) 0 clamp(22px, 3vh, 32px);
+  }
+
+  .hero .hero-cta {
+    margin-top: clamp(28px, 4vh, 40px);
+  }
 }
