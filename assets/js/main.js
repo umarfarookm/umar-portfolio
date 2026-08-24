@@ -90,42 +90,9 @@
   window.addEventListener('load', aosInit);
 
   /**
-   * Init typed.js
-   */
-  const selectTyped = document.querySelector('.typed');
-  if (selectTyped) {
-    let typed_strings = selectTyped.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
-
-  /**
    * Initiate Pure Counter
    */
   new PureCounter();
-
-  /**
-   * Animate the skills items on reveal
-   */
-  let skillsAnimation = document.querySelectorAll('.skills-animation');
-  skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
-      }
-    });
-  });
 
   /**
    * Custom Portfolio Modal
@@ -408,24 +375,6 @@
 
   });
 
-  /**
-   * Init swiper sliders
-   */
-  function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
-
-      if (swiperElement.classList.contains("swiper-tab")) {
-        initSwiperWithCustomPagination(swiperElement, config);
-      } else {
-        new Swiper(swiperElement, config);
-      }
-    });
-  }
-
-  window.addEventListener("load", initSwiper);
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
@@ -468,17 +417,52 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 
-  document.getElementById("sendMail").addEventListener("click", function() {
-    const contactName = document.getElementById('name-field').value;
-    var contactEmail = document.getElementById('email-field').value;
-    var contactSubject = document.getElementById('subject-field').value;
-    var contactMessage = document.getElementById('message-field').value;
-    if (!contactName || !contactEmail || !contactMessage || !contactSubject) {
-      alert("Please fill the details in the form");
-      return;
-    }
-    window.location.href = `mailto:umarfarook89@gmail.com?subject=Umar's Contact Form By ${contactName} (${contactEmail} Subject: ${contactSubject})&body=${contactMessage}`;
-  });
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    const formStatus = document.getElementById("form-status");
+
+    const setStatus = (message, isError) => {
+      formStatus.textContent = message;
+      formStatus.classList.toggle('is-error', !!isError);
+    };
+
+    contactForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name-field').value.trim();
+      const email = document.getElementById('email-field').value.trim();
+      const subject = document.getElementById('subject-field').value.trim();
+      const message = document.getElementById('message-field').value.trim();
+
+      const missing = [
+        [name, 'name-field'],
+        [email, 'email-field'],
+        [subject, 'subject-field'],
+        [message, 'message-field']
+      ].find(([value]) => !value);
+
+      if (missing) {
+        setStatus("Please fill in every field before sending.", true);
+        document.getElementById(missing[1]).focus();
+        return;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        setStatus("That email address does not look right. Please check it.", true);
+        document.getElementById('email-field').focus();
+        return;
+      }
+
+      const mailSubject = `Portfolio enquiry: ${subject}`;
+      const mailBody = `${message}\n\n--\nFrom: ${name}\nEmail: ${email}`;
+
+      setStatus("Opening your email app. If nothing happens, email umarfarookbtech@gmail.com directly.");
+
+      window.location.href = "mailto:umarfarookbtech@gmail.com" +
+        "?subject=" + encodeURIComponent(mailSubject) +
+        "&body=" + encodeURIComponent(mailBody);
+    });
+  }
 
 
   const d = new Date();
